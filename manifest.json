@@ -1,0 +1,35 @@
+{
+  "Actions": [
+    {
+      "Icon": "pluginIcon",
+      "Name": "Atem Cut",
+      "States": [
+        {
+          "Image": "pluginIcon"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "Tooltip": "Atem Cut",
+      "UUID": "com.admiraltriggerhappy.atemcontrol.atemcut"
+    }
+  ],
+  "SDKVersion": 2,
+  "Author": "Admiral Trigger Happy",
+  "CodePathWin": "atemplugin.exe",
+  "Description": "Plugin to control Black Magic Design ATEM Video Switcher",
+  "PropertyInspectorPath": "propertyinspector/index.html",
+  "Name": "Atem Control",
+  "Icon": "pluginIcon",
+  "Version": "0.1",
+  "OS": [
+
+    {
+        "Platform": "windows",
+        "MinimumVersion" : "10"
+    }
+  ],
+  "Software":
+    {
+        "MinimumVersion" : "4.1"
+    }
+}

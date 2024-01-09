@@ -1,0 +1,5 @@
+/.vscode
+/build
+/StreamDeckSDK
+/StreamDeckSDK.cmake
+/Vendor
