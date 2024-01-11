@@ -2,7 +2,7 @@
 
 //#include "BMDSwitcherAPI.idl"
 #include "MySettings.h"
-#include "AtemControl.h"
+#include "include\AtemControl.h"
 #include <StreamDeckSDK/ESDAction.h>
 #include <StreamDeckSDK/ESDLogger.h>
 #include <StreamDeckSDK/ESDActionWithExternalState.h>

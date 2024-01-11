@@ -3,3 +3,5 @@
 /StreamDeckSDK
 /StreamDeckSDK.cmake
 /Vendor
+/.vs
+/out

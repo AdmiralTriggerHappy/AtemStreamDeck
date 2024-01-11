@@ -5,8 +5,13 @@ cmake_policy(SET CMP0091 NEW)
 # Statically link the MSVC runtime
 set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 SET(SWITCHERS_SDK_INCLUDE "include/BMDSwitcherAPI_i.cpp")
-add_library(BMDSwitcherAPI ${SWITCHERS_SDK_INCLUDE})
+SET(ATEMCONTROL_INCLUDE "include/AtemControl.cpp")
+add_library(ATEMControl ${SWITCHERS_SDK_INCLUDE})
+add_library(BMDSwitcherAPI ${ATEMCONTROL_INCLUDE})
 
+set(windows_common_link_options
+      comsuppw.lib
+    )
 
 project(
   com.admiraltriggerhappy.atemcontrol
@@ -29,7 +34,7 @@ if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
 endif()
 message(STATUS "Install dir: ${CMAKE_INSTALL_PREFIX}")
 
-add_executable(atemplugin AtemCut.cpp AtemControl.cpp main.cpp)
+add_executable(atemplugin AtemCut.cpp main.cpp)
 set_target_properties(
   atemplugin
   PROPERTIES
@@ -38,8 +43,10 @@ set_target_properties(
   CXX_EXTENSIONS OFF
 )
 
+#add_dependencies(atemplugin AtemControl)
+
 #TARGET_INCLUDE_DIRECTORIES(atemplugin  PRIVATE ${SWITCHERS_SDK_INCLUDE_DIR})
-target_link_libraries(atemplugin BMDSwitcherAPI StreamDeckSDK)
+target_link_libraries(atemplugin  ${windows_common_link_options} ATEMControl BMDSwitcherAPI StreamDeckSDK)
 install(TARGETS atemplugin DESTINATION ${CMAKE_INSTALL_PREFIX})
 
 # If doing a Debug or RelWithDebInfo build, install the debug symbols too

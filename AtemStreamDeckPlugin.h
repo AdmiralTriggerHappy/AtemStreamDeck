@@ -1,6 +1,6 @@
 #pragma once
 
-#include "AtemControl.h"
+#include "include\AtemControl.h"
 #include "AtemCut.h"
 
 #include "include\BMDSwitcherAPI.h"
@@ -43,8 +43,8 @@ public:
   result = MixerHW->Connect(address);
   if(result==S_OK)
   {
-  string outputString = MixerHW->GetProductName();
-  ESDLog("Connection to ATEM successful" + outputString);
+  wstring outputString = MixerHW->GetProductName();
+  //ESDLog("Connection to ATEM successful" + outputString);
   };
     ESDDebug("Loaded fine");
 
